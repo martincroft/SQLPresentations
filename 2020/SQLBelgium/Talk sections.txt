@@ -1,0 +1,56 @@
+Open ADS/ SSMS
+Files
+-SSMS folders /projects
+-Add in folder
+-add additional folder to workspace
+
+Open start notebook
+
+Servers
+
+Server groups
+Connect to servers
+Stacking
+Registry hack
+Settings.json file
+Colour Pallette
+Multiple profiles ctrl-j
+-Folders
+-Configuration files
+
+Search
+
+  Glenn (Query 28)
+  Quick queries
+  add headers to files ctrl-p
+Power-shell
+
+  GetDBAservice
+Source control
+
+Extensions
+
+  @installed, @outdated
+  Admin Pack
+  Query editor boost
+Settings
+
+  Themes
+  shortcut keys - Adventureworks
+-Back to start notebook
+-Using Markup
+-Security Notebook - find query
+
+-AG groups not showing 
+-Connectivity to SQL 2000
+-Short cut keys
+-Misc Issues and fixes
+    -Snippets
+    -sp_execute
+    -sp_whoisactive
+    -fomatting
+    -query history
+    -sanddance 
+    -Redgate search
+    -Snaphot creator
+    -Data Scripter

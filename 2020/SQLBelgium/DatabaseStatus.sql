@@ -1,5 +1,4 @@
 -- DatabaseStatus.sql  #SQL
--- DatabaseStatus.sql #SQL
 --Get version so we can run different quiries based on version
 DECLARE @SQLServerInstanceVersion INT
 SELECT @SQLServerInstanceVersion=FLOOR(SUBSTRING(CAST(SERVERPROPERTY('ProductVersion')AS VARCHAR(10)),1,4))

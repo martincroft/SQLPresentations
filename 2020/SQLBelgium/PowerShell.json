@@ -1,0 +1,43 @@
+{
+"psGetDatabases": {
+"prefix": "psGetDatabases",
+"body": [
+"$$ServerName ='ServerName-'",
+"get-dbaDatabase -SqlInstance $$ServerName -ExcludeSystem | Select-Object Name ",
+"",
+""
+],
+"description": "Get Databases "
+},
+"psGetDBAService": {
+"prefix": "psGetDBAService",
+"body": [
+"$$ServerName ='ServerName",
+"get-dbaService -ComputerName $$ServerName | Select-Object ComputerName,Servicetype, ServiceName, State ",
+"",
+""
+],
+"description": "Show SQL Service details"
+},
+"psInvokeQuery": {
+"prefix": "psInvokeQuery",
+"body": [
+"#psInvokeQuery",
+"Invoke-DbaQuery -SqlInstance \"Servername\" -Query \"SELECT * FROM sysdatabases\""
+],
+"description": "Run SQL in PowerShell"
+},
+"psBackupCopyOnly": {
+"prefix": "psBackupCopyOnly",
+"body": [
+"",
+"#psBackupCopyOnly",
+"$SourceServer=''",
+"$BackupPath=''",
+"$Database=''",
+"",
+"Backup-DbaDatabase -SqlInstance $SourceServer -Path $BackupPath -Database $Database -Type Full -CopyOnly"
+],
+"description": "Powershell for Copy only backup"
+}
+}
