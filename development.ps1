@@ -1,0 +1,1 @@
+copy-item C:\Users\marti\AppData\Roaming\azuredatastudio\User\development\settings.json C:\Users\marti\AppData\Roaming\azuredatastudio\User\settings.json
