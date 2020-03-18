@@ -10,7 +10,7 @@ SELECT
     Name,
     state_desc,
     CASE 
-        WHEN mirroring_state_desc IS NULL THEN '' 
+        WHEN mirroring_state_desc IS THEN '' 
         ELSE mirroring_state_desc END AS synchronization_state_desc 
 FROM sys.databases d
 INNER JOIN sys.database_mirroring dm ON d.database_id = dm.database_id
@@ -18,7 +18,7 @@ END
 ELSE
 BEGIN
 
-EXEC(' SELECT sd.Name,
+EXEC(' SELECT ,
 CASE WHEN sd.is_read_only =1 THEN sd.state_desc + ''(READONLY)'' ELSE sd.state_desc END AS state_desc
 
 , ISNULL(ag.synchronization_state_desc,'''') AS synchronization_state_desc
