@@ -1,13 +1,27 @@
-DECLARE @Loop int =0
-DECLARE @msg VARCHAR(20)
+CREATE View vw_tablessizes
+AS
+SELECT t.Name AS TableName
+    , CAST(ROUND((SUM(a.used_pages) / 128.00), 2) AS NUMERIC(36, 2)) AS Used_MB
+FROM sys.tables t
+INNER JOIN sys.indexes i
+    ON t.OBJECT_ID = i.object_id
+INNER JOIN sys.partitions p
+    ON i.object_id = p.OBJECT_ID
+        AND i.index_id = p.index_id
+INNER JOIN sys.allocation_units a
+    ON p.partition_id = a.container_id
+INNER JOIN sys.schemas s
+    ON t.schema_id = s.schema_id
+GROUP BY t.Name
+    , s.Name
+    , p.Rows
 
-while @loop <> 2
-BEGIN
+GO
 
-    SELECT @msg = CAST(getdate() AS TIME)
-RAISERROR(@msg, 0, 1) WITH NOWAIT
+SELECT 0.02 AWBuildVersion
+    , 6.45 DatabaseLog
+    , 1.00 Department
 
-WAITFOR Delay '00:00:05'
-SET @Loop=@Loop+1
 
-END
+SELECT * FROM vw_tablessizes
+PIVOT (MAX(Used_MB) FOR Used_MB IN (S ))
